@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
-  Alert,
   Modal,
   Pressable,
   RefreshControl,
@@ -23,11 +22,6 @@ export function AdminDashboardScreen({ navigation }: any) {
     queryKey: ["admin-dashboard"],
     queryFn: dashboardService.getDashboard,
   });
-
-  const openSoonAlert = () => {
-    setIsMenuOpen(false);
-    Alert.alert("Em breve", "Tela de estoque em desenvolvimento");
-  };
 
   const requestLogout = () => {
     setIsMenuOpen(false);
@@ -106,7 +100,13 @@ export function AdminDashboardScreen({ navigation }: any) {
               <Text style={styles.menuItemText}>Pedidos</Text>
             </Pressable>
 
-            <Pressable style={styles.menuItem} onPress={openSoonAlert}>
+            <Pressable
+              style={styles.menuItem}
+              onPress={() => {
+                setIsMenuOpen(false);
+                navigation.navigate("Estoque");
+              }}
+            >
               <Text style={styles.menuItemText}>Estoque</Text>
             </Pressable>
 
@@ -189,7 +189,7 @@ export function AdminDashboardScreen({ navigation }: any) {
 
         <Pressable
           style={styles.actionCard}
-          onPress={() => Alert.alert("Em breve", "Tela de estoque em desenvolvimento")}
+          onPress={() => navigation.navigate("Estoque")}
         >
           <Text style={styles.actionTitle}>Estoque</Text>
           <Text style={styles.actionText}>Controle estoque</Text>

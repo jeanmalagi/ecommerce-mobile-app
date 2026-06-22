@@ -11,6 +11,7 @@ import { ProductDetailsScreen } from "../screens/ProductDetailsScreen";
 import { CartScreen } from "../screens/CartScreen";
 import { OrdersScreen } from "../screens/OrdersScreen";
 import { AdminDashboardScreen } from "../screens/AdminDashboardScreen";
+import { AdminStockScreen } from "../screens/AdminStockScreen";
 import { theme } from "../theme";
 
 const Stack = createNativeStackNavigator();
@@ -93,6 +94,7 @@ function AdminStack() {
         options={{ title: "Detalhes do produto" }}
       />
       <Stack.Screen name="Pedidos" component={OrdersScreen} />
+      <Stack.Screen name="Estoque" component={AdminStockScreen} />
     </Stack.Navigator>
   );
 }

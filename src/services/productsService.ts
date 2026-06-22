@@ -102,4 +102,9 @@ export const productsService = {
     const { data } = await api.delete(`/products/${id}`);
     return data;
   },
+
+  async updateStock(id: number, stock: number): Promise<Product> {
+    const { data } = await api.patch(`/products/${id}/stock`, { stock });
+    return data;
+  },
 };
