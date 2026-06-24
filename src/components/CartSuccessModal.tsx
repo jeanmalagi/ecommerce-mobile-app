@@ -35,9 +35,9 @@ export function CartSuccessModal({
         <Pressable style={styles.backdrop} onPress={() => setIsVisible(false)} />
         <View style={styles.container}>
           <Text style={styles.icon}>✓</Text>
-          <Text style={styles.title}>Sucesso!</Text>
-          <Text style={styles.message}>{message}</Text>
-          <Pressable style={styles.button} onPress={() => setIsVisible(false)}>
+          <Text testID="cart-success-title" style={styles.title}>Sucesso!</Text>
+          <Text testID="cart-success-message" style={styles.message}>{message}</Text>
+          <Pressable testID="cart-success-ok" style={styles.button} onPress={() => setIsVisible(false)}>
             <Text style={styles.buttonText}>OK</Text>
           </Pressable>
         </View>

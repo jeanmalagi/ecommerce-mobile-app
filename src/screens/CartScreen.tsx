@@ -111,20 +111,21 @@ export function CartScreen({ navigation }: any) {
       >
         <View style={styles.confirmOverlay}>
           <View style={styles.confirmCard}>
-            <Text style={styles.confirmTitle}>Remover item do carrinho?</Text>
+            <Text testID="remove-modal-title" style={styles.confirmTitle}>Remover item do carrinho?</Text>
             <Text style={styles.confirmText}>
               Deseja remover "{itemToRemove?.name ?? itemToRemove?.product_name}" do carrinho?
             </Text>
 
             <View style={styles.confirmActions}>
               <Pressable
+                testID="remove-modal-cancel"
                 style={styles.cancelButton}
                 onPress={() => setIsRemoveModalOpen(false)}
               >
                 <Text style={styles.cancelButtonText}>Cancelar</Text>
               </Pressable>
 
-              <Pressable style={styles.removeButton} onPress={confirmRemoveItem}>
+              <Pressable testID="remove-modal-confirm" style={styles.removeButton} onPress={confirmRemoveItem}>
                 <Text style={styles.removeButtonText}>Remover</Text>
               </Pressable>
             </View>
@@ -179,14 +180,14 @@ export function CartScreen({ navigation }: any) {
               <Text style={styles.name}>{item.name ?? item.product_name}</Text>
               <Text style={styles.meta}>Qtd: {item.quantity}</Text>
             </View>
-            <Pressable style={styles.removeBtn} onPress={() => requestRemoveItem(item)}>
+            <Pressable testID="cart-item-remove" style={styles.removeBtn} onPress={() => requestRemoveItem(item)}>
               <Text style={styles.removeBtnText}>Remover</Text>
             </Pressable>
           </View>
         )}
       />
 
-      <Text style={styles.total}>Total: R$ {total.toFixed(2)}</Text>
+      <Text testID="cart-total" style={styles.total}>Total: R$ {total.toFixed(2)}</Text>
 
       <Pressable
         style={[

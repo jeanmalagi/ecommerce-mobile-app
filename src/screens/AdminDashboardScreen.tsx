@@ -149,7 +149,7 @@ export function AdminDashboardScreen({ navigation }: any) {
 
       <View style={styles.banner}>
         <View style={styles.bannerHeader}>
-          <Text style={styles.bannerTitle}>Painel Admin</Text>
+          <Text testID="admin-dashboard-title" style={styles.bannerTitle}>Painel Admin</Text>
           <Pressable
             style={styles.menuButton}
             onPress={() => setIsMenuOpen(true)}
@@ -166,7 +166,7 @@ export function AdminDashboardScreen({ navigation }: any) {
         {metrics.map((metric) => (
           <View key={metric.key} style={styles.metricCard}>
             <Text style={styles.metricValue}>{metric.value}</Text>
-            <Text style={styles.metricLabel}>{metric.label}</Text>
+            <Text testID={`admin-metric-${metric.key}`} style={styles.metricLabel}>{metric.label}</Text>
           </View>
         ))}
       </View>

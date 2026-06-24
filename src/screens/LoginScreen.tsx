@@ -9,8 +9,8 @@ type Props = NativeStackScreenProps<any>;
 
 export function LoginScreen({ navigation }: Props) {
   const { login } = useAuth();
-  const [email, setEmail] = useState("admin@email.com");
-  const [password, setPassword] = useState("123456");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
   const onSubmit = async () => {
@@ -31,6 +31,7 @@ export function LoginScreen({ navigation }: Props) {
         <Text style={styles.subtitle}>Bem-vindo de volta</Text>
 
         <TextInput
+          testID="input-email"
           placeholder="Digite seu email"
           placeholderTextColor={theme.colors.muted}
           style={styles.input}
@@ -39,6 +40,7 @@ export function LoginScreen({ navigation }: Props) {
           onChangeText={setEmail}
         />
         <TextInput
+          testID="input-senha"
           placeholder="Digite sua senha"
           placeholderTextColor={theme.colors.muted}
           style={styles.input}
@@ -47,11 +49,11 @@ export function LoginScreen({ navigation }: Props) {
           onChangeText={setPassword}
         />
 
-        <Pressable style={styles.primaryBtn} onPress={onSubmit}>
+        <Pressable testID="btn-entrar" style={styles.primaryBtn} onPress={onSubmit}>
           <Text style={styles.primaryBtnText}>{submitting ? "Entrando..." : "Entrar"}</Text>
         </Pressable>
 
-        <Pressable style={styles.secondaryBtn} onPress={() => navigation.navigate("Register")}>
+        <Pressable testID="btn-criar-conta" style={styles.secondaryBtn} onPress={() => navigation.navigate("Register")}>
           <Text style={styles.secondaryBtnText}>Criar conta</Text>
         </Pressable>
       </View>

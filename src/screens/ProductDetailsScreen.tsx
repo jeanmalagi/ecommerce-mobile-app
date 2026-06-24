@@ -101,6 +101,7 @@ export function ProductDetailsScreen({ route, navigation }: any) {
         </View>
 
         <Pressable
+          testID="btn-add-to-cart"
           style={[styles.primaryBtn, isOutOfStock && styles.primaryBtnDisabled]}
           onPress={addToCart}
           disabled={isOutOfStock}

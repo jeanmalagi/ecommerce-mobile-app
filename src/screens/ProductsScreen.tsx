@@ -88,8 +88,8 @@ export function ProductsScreen({ navigation }: any) {
 
       <View style={styles.headerRow}>
         <View>
-          <Text style={styles.brand}>MyStore</Text>
-          <Text style={styles.title}>Produtos</Text>
+          <Text testID="customer-brand" style={styles.brand}>MyStore</Text>
+          <Text testID="customer-products-title" style={styles.title}>Produtos</Text>
         </View>
         <Pressable style={styles.logoutBtn} onPress={requestLogout}>
           <Text style={styles.logoutBtnText}>Sair</Text>
@@ -106,6 +106,7 @@ export function ProductsScreen({ navigation }: any) {
         onRefresh={refetch}
         renderItem={({ item }: any) => (
           <TouchableOpacity
+            testID="product-card"
             style={styles.card}
             onPress={() => navigation.navigate("ProductDetails", { productId: item.id })}
           >

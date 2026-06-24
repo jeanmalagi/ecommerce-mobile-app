@@ -4,13 +4,14 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "start": "expo start --port 8083",
+    "android": "expo start --android --port 8083",
+    "ios": "expo start --ios --port 8083",
+    "web": "expo start --web --port 8083"
   },
   "dependencies": {
     "@expo/metro-runtime": "~5.0.5",
+    "@expo/vector-icons": "^14.1.0",
     "@react-native-async-storage/async-storage": "^2.1.2",
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/native": "^6.1.18",
@@ -18,7 +19,9 @@
     "@tanstack/react-query": "^5.59.0",
     "axios": "^1.7.7",
     "expo": "^53.0.0",
+    "expo-asset": "~11.1.7",
     "expo-constants": "^17.0.0",
+    "expo-font": "~13.3.2",
     "expo-image-picker": "~16.1.4",
     "expo-status-bar": "~2.2.0",
     "react": "19.0.0",

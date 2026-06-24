@@ -26,9 +26,10 @@ export function RegisterScreen() {
     <View style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.logo}>MyStore</Text>
-        <Text style={styles.subtitle}>Crie sua conta</Text>
+        <Text testID="register-title" style={styles.subtitle}>Crie sua conta</Text>
 
         <TextInput
+          testID="register-input-nome"
           placeholder="Digite seu nome"
           placeholderTextColor={theme.colors.muted}
           style={styles.input}
@@ -36,6 +37,7 @@ export function RegisterScreen() {
           onChangeText={setName}
         />
         <TextInput
+          testID="register-input-email"
           placeholder="Digite seu email"
           placeholderTextColor={theme.colors.muted}
           style={styles.input}
@@ -44,6 +46,7 @@ export function RegisterScreen() {
           onChangeText={setEmail}
         />
         <TextInput
+          testID="register-input-senha"
           placeholder="Digite sua senha"
           placeholderTextColor={theme.colors.muted}
           style={styles.input}
@@ -52,7 +55,7 @@ export function RegisterScreen() {
           onChangeText={setPassword}
         />
 
-        <Pressable style={styles.primaryBtn} onPress={onSubmit}>
+        <Pressable testID="btn-cadastrar" style={styles.primaryBtn} onPress={onSubmit}>
           <Text style={styles.primaryBtnText}>Cadastrar</Text>
         </Pressable>
       </View>
